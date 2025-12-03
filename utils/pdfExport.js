@@ -2,7 +2,7 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
 export const exportToPDF = (records, filename = 'report.pdf') => {
-  const doc = new jsPDF();
+  const doc = new jsPDF('landscape');
   
   // Add logo
   try {
@@ -48,18 +48,18 @@ export const exportToPDF = (records, filename = 'report.pdf') => {
     styles: { fontSize: 8, cellPadding: 2 },
     headStyles: { fillColor: [66, 66, 66] },
     columnStyles: {
-      0: { cellWidth: 18 },
-      1: { cellWidth: 15 },
-      2: { cellWidth: 15 },
-      3: { cellWidth: 25 },
-      4: { cellWidth: 25 },
-      5: { cellWidth: 15 },
-      6: { cellWidth: 15 },
-      7: { cellWidth: 15 },
-      8: { cellWidth: 15 },
-      9: { cellWidth: 15 },
-      10: { cellWidth: 15 },
-      11: { cellWidth: 15 }
+      0: { cellWidth: 22 },
+      1: { cellWidth: 20 },
+      2: { cellWidth: 20 },
+      3: { cellWidth: 30 },
+      4: { cellWidth: 30 },
+      5: { cellWidth: 20 },
+      6: { cellWidth: 20 },
+      7: { cellWidth: 20 },
+      8: { cellWidth: 20 },
+      9: { cellWidth: 20 },
+      10: { cellWidth: 20 },
+      11: { cellWidth: 20 }
     },
     didDrawPage: (data) => {
       // Page number
