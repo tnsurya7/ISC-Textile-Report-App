@@ -2,7 +2,10 @@ import jsPDF from 'jspdf';
 import 'jspdf-autotable';
 
 export const exportToPDF = (records, filename = 'report.pdf') => {
-  const doc = new jsPDF('landscape');
+  // Detect if mobile device (exclude macOS/desktop)
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && !/Macintosh|Windows|Linux/i.test(navigator.userAgent);
+  const orientation = isMobile ? 'portrait' : 'landscape';
+  const doc = new jsPDF(orientation);
   
   // Add logo
   try {
