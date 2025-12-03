@@ -45,22 +45,10 @@ export const exportToPDF = (records, filename = 'report.pdf') => {
     head: headers,
     body: data,
     startY: 35,
-    styles: { fontSize: 7, cellPadding: 1.5 },
-    headStyles: { fillColor: [66, 66, 66], fontSize: 7 },
-    columnStyles: {
-      0: { cellWidth: 20 },
-      1: { cellWidth: 18 },
-      2: { cellWidth: 18 },
-      3: { cellWidth: 28 },
-      4: { cellWidth: 28 },
-      5: { cellWidth: 18 },
-      6: { cellWidth: 18 },
-      7: { cellWidth: 18 },
-      8: { cellWidth: 18 },
-      9: { cellWidth: 18 },
-      10: { cellWidth: 18 },
-      11: { cellWidth: 18 }
-    },
+    styles: { fontSize: 7, cellPadding: 2, halign: 'center' },
+    headStyles: { fillColor: [66, 66, 66], fontSize: 7, fontStyle: 'bold', halign: 'center' },
+    margin: { left: 5, right: 5 },
+    tableWidth: 'auto',
     didDrawPage: (data) => {
       // Page number
       const pageCount = doc.internal.getNumberOfPages();
