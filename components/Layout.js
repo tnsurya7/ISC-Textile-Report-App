@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
       <InstallPrompt />
-      <div className="flex flex-1">
+      <div className="flex flex-grow min-h-0">
         <div className="hidden lg:block">
           <Sidebar />
         </div>
