@@ -6,15 +6,15 @@ export default function Layout({ children }) {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
+      <InstallPrompt />
       <div className="flex flex-1">
         <div className="hidden lg:block">
           <Sidebar />
         </div>
-        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-full overflow-x-hidden">
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-full overflow-x-hidden overflow-y-auto pb-20">
           {children}
         </main>
       </div>
-      <InstallPrompt />
       
       {/* Footer */}
       <footer className="py-6 border-t-2 border-gray-300 text-center bg-white shadow-sm">
