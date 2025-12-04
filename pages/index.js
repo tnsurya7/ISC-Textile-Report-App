@@ -63,9 +63,15 @@ export default function Dashboard() {
     try {
       const response = await fetch('/api/getRecords');
       const data = await response.json();
-      if (data.success) setRecords(data.records);
+      if (data.success) {
+        setRecords(data.records || []);
+      } else {
+        console.error('API Error:', data.error);
+        setRecords([]);
+      }
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Fetch Error:', error);
+      setRecords([]);
     } finally {
       setLoading(false);
     }
