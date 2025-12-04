@@ -172,7 +172,11 @@ export default function Dashboard() {
     totalBalance: filteredRecords.reduce((sum, r) => sum + (parseFloat(r.balance) || 0), 0)
   };
 
-  if (!mounted || loading) return <div className="flex items-center justify-center h-64">Loading...</div>;
+  if (!mounted || loading) return (
+    <div className="flex items-center justify-center h-screen">
+      <div className="text-gray-600">Loading...</div>
+    </div>
+  );
 
   return (
     <div className="max-w-7xl mx-auto">

@@ -4,22 +4,20 @@ import InstallPrompt from './InstallPrompt';
 
 export default function Layout({ children }) {
   return (
-    <>
-      <div className="min-h-screen bg-gray-50">
-        <Navbar />
-        <div className="flex">
-          <div className="hidden lg:block">
-            <Sidebar />
-          </div>
-          <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-full overflow-x-hidden">
-            {children}
-          </main>
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <Navbar />
+      <div className="flex flex-1">
+        <div className="hidden lg:block">
+          <Sidebar />
         </div>
-        <InstallPrompt />
+        <main className="flex-1 p-4 sm:p-6 lg:p-8 max-w-full overflow-x-hidden">
+          {children}
+        </main>
       </div>
+      <InstallPrompt />
       
       {/* Footer */}
-      <footer className="py-4 border-t border-gray-200 text-center bg-white">
+      <footer className="py-4 border-t border-gray-200 text-center bg-white mt-auto">
         <p className="text-sm text-gray-600">
           © 2025. All Rights Reserved. Developed by{' '}
           <a 
@@ -32,6 +30,6 @@ export default function Layout({ children }) {
           </a>
         </p>
       </footer>
-    </>
+    </div>
   );
 }
