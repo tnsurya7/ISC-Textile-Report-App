@@ -4,9 +4,9 @@ import InstallPrompt from './InstallPrompt';
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <Navbar />
-      <div className="flex">
+      <div className="flex flex-1">
         <div className="hidden lg:block">
           <Sidebar />
         </div>
@@ -15,6 +15,21 @@ export default function Layout({ children }) {
         </main>
       </div>
       <InstallPrompt />
+      
+      {/* Footer */}
+      <footer className="py-6 border-t border-gray-200 text-center bg-white">
+        <p className="text-sm text-gray-600">
+          © 2025. All Rights Reserved. Developed by{' '}
+          <a 
+            href="https://suryakumar-portfolio-chi.vercel.app/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:text-blue-800 font-medium transition-colors"
+          >
+            SURYA KUMAR M
+          </a>
+        </p>
+      </footer>
     </div>
   );
 }
